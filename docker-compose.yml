@@ -29,7 +29,7 @@ services:
     container_name: lara-task-db
     image: mysql:8
     ports:
-      - "3306:3306"
+      - "3308:3306"
     env_file:
       - ./env/mysql.env
     networks:
