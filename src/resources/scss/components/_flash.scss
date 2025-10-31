@@ -1,0 +1,5 @@
+@use '../base/colors';
+
+.flash-message {
+    color: colors.$flash-primary;
+}

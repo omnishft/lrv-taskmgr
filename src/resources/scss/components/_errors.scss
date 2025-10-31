@@ -1,0 +1,6 @@
+@use '../base/colors';
+
+.error-message {
+    color: colors.$error-primary;
+    font-size: 0.8rem;
+}
