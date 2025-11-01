@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Task Manager</title>
-        @vite(['resources/js/app.js', 'resources/scss/app.scss'])
+        @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="bg-[#0d1117] text-[#c9d1d9]">
 
 
         <div>

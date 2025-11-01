@@ -5,7 +5,7 @@
 @section('content')
    @if($tasks)
         @foreach($tasks as $task)
-            <!-- <li> -->
+            <!-- <li class="text-red-800"> -->
             <!--     {{$task->title}} -->
             <!-- </li> -->
             <li>
