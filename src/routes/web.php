@@ -15,12 +15,12 @@ Route::get('/tasks', function () {
 
 Route::view('/tasks/create', 'create');
 
-Route::get('/tasks/{id}/edit', function ($id) {
-    return view('edit', ['task' =>\App\Models\Task::find($id)]);
+Route::get('/tasks/{task}/edit', function (Task $task) {
+    return view('edit', ['task' => $task]);
 })->name('tasks.edit');
 
-Route::get('/tasks/{id}', function ($id) {
-    return view('show', ['task' =>\App\Models\Task::find($id)]);
+Route::get('/tasks/{task}', function (Task $task) {
+    return view('show', ['task' => $task]);
 })->name('tasks.show');
 
 Route::post('/tasks', function (Request $request) {
@@ -41,7 +41,7 @@ Route::post('/tasks', function (Request $request) {
         ->with('success', 'Task created succesfully!');
 })->name('tasks.store');
 
-Route::put('/tasks/{id}/edit', function ($id, Request $request) {
+Route::put('/tasks/{task}/edit', function (Task $task, Request $request) {
     // dd($request->all());
     $data = $request->validate([
          'title' => 'required|max:255',
@@ -49,7 +49,6 @@ Route::put('/tasks/{id}/edit', function ($id, Request $request) {
          'long_description' => 'required',
     ]);
 
-    $task = App\Models\Task::findOrFail($id);
     $task->title = $data['title'];
     $task->description = $data['description'];
     $task->long_description = $data['long_description'];
