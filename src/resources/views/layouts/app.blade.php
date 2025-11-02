@@ -6,7 +6,7 @@
         <title>Task Manager</title>
         @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
     </head>
-    <body class="bg-[#0d1117] text-[#c9d1d9]">
+    <body class="container mx-auto mt-10 mb-10 max-w-lg bg-[#0d1117] text-[#c9d1d9] ">
 
 
         <div>
