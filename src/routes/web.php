@@ -40,3 +40,10 @@ Route::put('/tasks/{task}/edit', function (Task $task, TaskRequest $request) {
         ->with('success', 'Task updated succesfully!');
 })->name('tasks.update');
 
+Route::delete('/tasks/{task}', function ( Task $task) {
+    $task->delete();
+
+    return redirect()->route('tasks.index')
+         ->with('success', 'Task was succesfully deleted');
+})->name('tasks.destroy');
+
