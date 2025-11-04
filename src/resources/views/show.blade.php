@@ -14,6 +14,14 @@
     <p>{{$task->updated_at}}</p>
 
     <div>
+        <form method="POST" action="{{route('tasks.toggle-complete', ['task' => $task->id])}}">
+            @csrf
+            @method('PUT')
+            <button type="submit">Mark as {{$task->completed ? 'not completed' : 'completed'}}</button>
+        </form>
+    </div>
+
+    <div>
         <a href="{{route('tasks.update' , ['task' => $task->id])}}">Edit</a>
     </div>
 
@@ -24,5 +32,10 @@
             <button type="submit">Delete</button>
         </form>
     </div>
+
+    <div>
+        <a href="{{route('tasks.index')}}">Return</a>
+    </div>
+
 @endsection
 
