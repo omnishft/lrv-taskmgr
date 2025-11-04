@@ -16,4 +16,7 @@
        <p>No Tasks</p>
    @endif
 
+    @if($tasks->count())
+        {{$tasks->links()}}
+    @endif
 @endsection
