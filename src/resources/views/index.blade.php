@@ -3,6 +3,9 @@
 @section('title', 'Tasks List')
 
 @section('content')
+   <div>
+        <a href="{{route('tasks.create')}}">Add Task</a>
+   </div>
    @if($tasks)
         @foreach($tasks as $task)
             <!-- <li class="text-red-800"> -->
@@ -17,6 +20,8 @@
    @endif
 
     @if($tasks->count())
-        {{$tasks->links()}}
+        <nav>
+            {{$tasks->links()}}
+        </nav>
     @endif
 @endsection

@@ -14,6 +14,10 @@
     <p>{{$task->updated_at}}</p>
 
     <div>
+        <a href="{{route('tasks.update' , ['task' => $task->id])}}">Edit</a>
+    </div>
+
+    <div>
         <form method="POST" action="{{route('tasks.destroy', ['task' => $task->id])}}">
             @csrf
             @method('DELETE')

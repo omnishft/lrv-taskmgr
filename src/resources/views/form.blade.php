@@ -2,6 +2,14 @@
 
 @section('title', isset($task) ? 'Edit Task' : 'Add Task')
 
+@isset($task)
+
+@else
+   <div>
+        <a href="{{route('tasks.create')}}">Add Task</a>
+   </div>
+@endisset
+
 @section('content')
   <form method="POST" action="{{isset($task)  ? route('tasks.update', ['task' => $task->id]) : route('tasks.store')}}">
     @csrf
@@ -44,6 +52,18 @@
         @endisset
       </button>
     </div>
+
+    @isset($task)
+        <div>
+            <a href="{{route('tasks.show' , ['task' => $task->id])}}">Cancel</a>
+        </div>
+    @else
+        <div>
+            <a href="{{route('tasks.index')}}">Cancel</a>
+        </div>
+    @endisset
+
+
   </form>
 @endsection
 

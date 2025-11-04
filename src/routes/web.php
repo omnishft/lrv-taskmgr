@@ -14,7 +14,7 @@ Route::get('/tasks', function () {
     return view('index', ['tasks' => \App\Models\Task::latest()->paginate(5)]);
 })->name('tasks.index');
 
-Route::view('/tasks/create', 'create');
+Route::view('/tasks/create', 'create')->name('tasks.create');
 
 Route::get('/tasks/{task}/edit', function (Task $task) {
     return view('edit', ['task' => $task]);

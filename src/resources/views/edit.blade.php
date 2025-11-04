@@ -2,5 +2,8 @@
 
 
 @section('content')
-    @include('form')
+    @include('form', ['task' => $task])
+    <div>
+        <a href="{{route('tasks.index')}}">Cancel</a>
+    </div>
 @endsection

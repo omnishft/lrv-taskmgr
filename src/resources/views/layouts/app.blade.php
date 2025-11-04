@@ -7,6 +7,11 @@
         @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
     </head>
     <body class="container mx-auto mt-10 mb-10 max-w-lg bg-[#0d1117] text-[#c9d1d9] ">
+        <div>
+            @if(session()->has('success'))
+                <div class="flash-message"> {{ session('success') }} </div>
+            @endif
+        </div>
 
 
         <div>
@@ -16,9 +21,6 @@
         </div>
 
         <div>
-            @if(session()->has('success'))
-                <div class="flash-message"> {{ session('success') }} </div>
-            @endif
             @yield('content')
         </div>
 
